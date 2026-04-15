@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-container {
+    background-color: grey;
+    height: 600px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
