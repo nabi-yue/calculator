@@ -1,3 +1,4 @@
+/*Overall*/
 * {
     margin: 0;
     padding: 0;
@@ -12,11 +13,70 @@ body {
     justify-content: center;
 }
 
+/*Body*/
 .calculator-container {
     background-color: grey;
     height: 600px;
     width: 300px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
+/*Screen*/
+.screen {
+    background-color: darkgray;
+    height: 100px;
+    width: 250px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/*numbers*/
+.number-container {
+    background-color: darkgray;
+    height: 300px;
+    width: 250px;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.number-buttons {
+    background-color: gray;
+    color: white;
+    height: 70px;
+    width: 70px;
+    flex-shrink: 0;
+}
+
+/*operations*/
+
+.operation-container {
+    background-color: darkgrey;
+    height: 100px;
+    width: 250;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.operation-buttons {
+    background-color: gray;
+    color: white;
+    height: 40px;
+    width: 40px;
+    flex-shrink: 0;
+}

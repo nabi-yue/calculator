@@ -1,3 +1,4 @@
+let one = document.querySelector("#number-one");
 let numOne
 let numTwo
 let operationSymbol
@@ -30,3 +31,4 @@ function operate(numOne, numTwo, operationSymbol){
             return division(numOne, numTwo);
     }
 }
+
