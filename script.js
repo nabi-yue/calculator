@@ -1,4 +1,8 @@
-let one = document.querySelector("#number-one");
+let displayedNumber = document.querySelector(".output");
+const signPad = document.querySelector(".operation-container");
+const numberPad = document.querySelector(".number-container");
+let numClicked
+let chosenOperator;
 let numOne
 let numTwo
 let operationSymbol
@@ -32,3 +36,25 @@ function operate(numOne, numTwo, operationSymbol){
     }
 }
 
+
+
+numberPad.addEventListener("click", (e)=>{
+    displayedNumber.textContent = e.target.textContent;
+    numClicked = e.target.textContent.parseInt();
+    console.log(numClicked);
+
+    
+})
+
+
+signPad.addEventListener("click", (e)=> {
+    chosenOperator = e.target.textContent.toString();
+    displayedNumber.textContent = chosenOperator;
+    
+    switch(chosenOperator){
+        case '+':
+            console.log(chosenOperator)
+            break;
+    }
+
+})
