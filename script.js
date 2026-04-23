@@ -43,7 +43,6 @@ numberPad.addEventListener("click", (e)=>{
     numClicked = e.target.textContent.parseInt();
     console.log(numClicked);
 
-    
 })
 
 
