@@ -1,11 +1,16 @@
 let displayedNumber = document.querySelector(".output");
-const signPad = document.querySelector(".operation-container");
-const numberPad = document.querySelector(".number-container");
-let numClicked
+let screen = document.querySelector(".screen");
+const signPad = document.querySelectorAll(".operation-buttons");
+let firstToDisplay = document.createElement("p");
+let secondToDisplay = document.createElement("p");
+let operationToDisplay = document.createElement("p");
+const numberPad = document.querySelectorAll(".number-buttons");
+let numClicked;
 let chosenOperator;
-let numOne
-let numTwo
-let operationSymbol
+let numberOfClicks = 0;
+let numOne;
+let numTwo;
+let operationSymbol;
 
 function addition(numOne, numTwo){
     return numOne + numTwo;
@@ -37,23 +42,38 @@ function operate(numOne, numTwo, operationSymbol){
 }
 
 
+numberPad.forEach((number)=>{
+    number.addEventListener("click", ()=> {
+        numClicked = parseInt(number.textContent, 10);
+        
+        if(numberOfClicks==0){
+            numOne = numClicked
 
-numberPad.addEventListener("click", (e)=>{
-    displayedNumber.textContent = e.target.textContent;
-    numClicked = e.target.textContent.parseInt();
-    console.log(numClicked);
+            
+            firstToDisplay.textContent = numOne
+            screen.appendChild(firstToDisplay);
 
+            numberOfClicks++
+        } else if(numberOfClicks==1){
+            numTwo = numClicked
+
+            secondToDisplay.textContent = numTwo
+            screen.appendChild(secondToDisplay);
+
+            numberOfClicks = 0;
+        } 
+
+        console.log(numOne);
+        console.log(numTwo);
+    })
 })
 
-
-signPad.addEventListener("click", (e)=> {
-    chosenOperator = e.target.textContent.toString();
-    displayedNumber.textContent = chosenOperator;
-    
-    switch(chosenOperator){
-        case '+':
-            console.log(chosenOperator)
-            break;
-    }
-
+signPad.forEach((sign)=>{
+    sign.addEventListener("click", () => {
+        chosenOperator = sign.textContent.trim();
+        if(numberOfClicks==1){
+            operationToDisplay.textContent = chosenOperator;
+            screen.appendChild(operationToDisplay);
+        }
+    })
 })
